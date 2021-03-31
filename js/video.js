@@ -1,13 +1,14 @@
 var video = document.getElementById('player1');
 var volume = document.getElementById('volume');
+var slider = document.querySelector("#slider");
 
 window.addEventListener("load", function() {
 	console.log("Good job opening the window")
-	volume.innerHTML = 100 + "%";
 });
 
 document.querySelector("#play").addEventListener("click", function() {
 	console.log("Play Video");
+	volume.innerHTML = slider.value + "%";
 	video.play();
 });
 
@@ -47,7 +48,7 @@ document.querySelector("#mute").addEventListener("click", function() {
 	}
 });
 
-document.querySelector("#slider").addEventListener("click", function() {
+slider.addEventListener("click", function() {
 	video.volume = this.value / 100;
 	volume.innerHTML = this.value + "%";
 	console.log(video.volume);
