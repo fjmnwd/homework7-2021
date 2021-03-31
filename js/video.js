@@ -3,7 +3,7 @@ var volume = document.getElementById('volume');
 var slider = document.querySelector("#slider");
 
 window.addEventListener("load", function() {
-	console.log("Good job opening the window")
+	console.log("Good job opening the window");
 });
 
 document.querySelector("#play").addEventListener("click", function() {
@@ -35,16 +35,18 @@ document.querySelector("#skip").addEventListener("click", function() {
 	console.log("New time is ", video.currentTime);
 });
 
-document.querySelector("#mute").addEventListener("click", function() {
+var mute = document.querySelector("#mute");
+
+mute.addEventListener("click", function() {
 	if (video.muted) {
 		video.muted = false;
-		this.InnerHTML = "Unmute";
-		console.log("Unmute");
+		mute.innerHTML = "Mute";
+		console.log("Unmute the video");
 	}
 	else {
 		video.muted = true;
-		this.InnerHTML = "Mute";
-		console.log("Mute");
+		mute.innerHTML = "Unmute";
+		console.log("Mute the video");
 	}
 });
 
